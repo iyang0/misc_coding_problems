@@ -10,3 +10,9 @@ function isPalidrome(x){
   let reverse = x.toString().split('').reverse().join('');
   return x.toString() === reverse;
 }
+
+//could you solve it without converting the integer to a string?
+function isPalidrome(x){
+  let reverse = x.toString().split('').reverse().join('');
+  return x.toString() === reverse;
+}
