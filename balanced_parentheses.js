@@ -29,7 +29,7 @@ function balancedParentheses(str){
       //if closing brace, pop the opening off the stack
       let lastOpening = stack.pop();
       //check if popped element matches with the closing
-      if(char != map[lastOpening]) return false;
+      if(char != charPairs[lastOpening]) return false;
       
     }
   }
