@@ -1,20 +1,15 @@
 function insertionSort(array) {
-	let sortedIdx = 0;
 	
-	while(sortedIdx < array.length){
-		let lowestUnsorted = array[sortedIdx];
-		let lowestUnsortedIdx = sortedIdx;
+	for(let sortedIdx = 0; sortedIdx < array.length; sortedIdx++){
+		let unsortedIdx = sortedIdx;
 		
-		for(let i=sortedIdx; i<array.length; i++){
-			if(array[i] <= lowestUnsorted){
-				lowestUnsorted = array[i];
-				lowestUnsortedIdx = i;
-			}
+		while(	unsortedIdx > 0 && 
+				array[unsortedIdx] < array[unsortedIdx - 1]){
+			
+			swap(array, unsortedIdx, unsortedIdx - 1);
+			unsortedIdx -= 1;
 		}
 		
-		if(lowestUnsortedIdx !== sortedIdx) swap(array, sortedIdx, lowestUnsortedIdx);
-		
-		sortedIdx++;
 	}
 	return array;
 }
