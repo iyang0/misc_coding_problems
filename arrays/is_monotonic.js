@@ -2,7 +2,7 @@
  * returns whether the input array is monotonic.
  * Monotonic means the array are entirely non-increasing or entirely non-decreasing
  * 
- * @param {Number[]}
+ * @param {Number[]} arr - an array of integers
  * 
  * @returns {Boolean}
 */
