@@ -4,7 +4,7 @@ class ListNode:
         self.val = val
         self.next = next
 
-def mergeTwoLists(l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+def mergeTwoLists(l1, l2):
     """Merge two sorted linked lists and return it as a sorted list. The list should be made by splicing together the nodes of the first two lists."""
     head = ListNode()
     tail = head
