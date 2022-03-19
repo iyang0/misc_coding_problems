@@ -16,31 +16,31 @@
  * 
  * @returns {Number[]} Array with all numbers in the matrix visited from a spiral method
  */
-function spiral(array) {
+function spiralTraverse(matrix) {
 
-    let botRow = array.length;
-    let rightCol = array[0].length;
+    let botRow = matrix.length;
+    let rightCol = matrix[0].length;
     let topRow = 0, leftCol = 0;
-    let i, output=[];
+    let i = null, output=[];
     
-    while (topRow < rightCol && leftCol < rightCol) {
+    while (topRow < botRow && leftCol < rightCol) {
       
       // add the top row from the unvisited elements to the output array
       for (i = leftCol; i < rightCol; i++) {
-        output.push(array[topRow][i]);
+        output.push(matrix[topRow][i]);
       }
       topRow++;
   
       // add the right column from the unvisited elements to the output array
       for (i = topRow; i < botRow; i++) {
-        output.push(array[i][rightCol - 1]);
+        output.push(matrix[i][rightCol - 1]);
       }
       rightCol--;
   
       // add the bottom row from the unvisited elements to the output array
       if (topRow < botRow) {
         for (i = rightCol - 1; i >= leftCol; i--) {
-          output.push(array[botRow - 1][i]);
+          output.push(matrix[botRow - 1][i]);
         }
         botRow--;
       }
@@ -48,7 +48,7 @@ function spiral(array) {
       // add the left column from the unvisited elements to the output array
       if (leftCol < rightCol) {
         for (i = botRow - 1; i >= topRow; i--) {
-          output.push(array[i][leftCol]);
+          output.push(matrix[i][leftCol]);
         }
         leftCol++;
       }
@@ -56,4 +56,3 @@ function spiral(array) {
     
     return output;
 }
-//todo: need to handle if there is just one row of numbers or one column of numbers.
