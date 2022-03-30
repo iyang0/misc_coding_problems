@@ -5,9 +5,9 @@
 */
 function firstDuplicate(arr) {
     let counter = {};
-      for(let i=0; i<arr.length; i++){
-          if(counter[arr[i]] > 1) return arr[i];
-          counter[arr[i]] = (arr[i]||0) + 1;
-      }
+    for(let i=0; i<arr.length; i++){
+        counter[arr[i]] = ( counter[arr[i]] || 0 ) + 1;
+        if(counter[arr[i]] > 1) return arr[i];
+    }
     return -1;
-  }
+}
